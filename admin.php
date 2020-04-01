@@ -27,8 +27,9 @@ $lendings = $manager->getLendings();
         <a class="logo" href="index.php"><b>E</b>půjčování.cz</a>
         <nav>
             <a href="index.php">Nabídka</a>
-            <a href="#">Podmínky</a>
-            <a href="#">Kontakty</a>
+            <a href="https://github.com/MakulaVojtech/pujcovna-aut" target="_blank">Podmínky</a>
+            <a href="https://github.com/MakulaVojtech/pujcovna-aut" target="_blank">Kontakty</a>
+            <a href="admin.php">Administrace</a>
         </nav>
     </header>
     <h1>Administrace vypůjčených aut</h1>
@@ -57,7 +58,7 @@ $lendings = $manager->getLendings();
                         <div class="controls">
                             <a href="#" class="fa fa-pencil"></a>
                             <a href="#" class="fa fa-trash"></a>
-                    </div>
+                        </div>
                     </div>
                 </div>
             </div>

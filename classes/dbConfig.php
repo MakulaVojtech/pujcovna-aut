@@ -6,9 +6,9 @@ namespace classes;
 
 abstract class dbConfig
 {
-    const DSN = "mysql:dbname=pujcovna;host=127.0.0.1;charset=utf8";
-    const USER = "root";
-    const PASS = "";
+    private const DSN = "mysql:dbname=pujcovna;host=127.0.0.1;charset=utf8";
+    private const USER = "root";
+    private const PASS = "";
 
     protected function getConnection() : \PDO
     {
