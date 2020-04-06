@@ -25,7 +25,7 @@ $user = isset($_SESSION["user"]) ? $_SESSION["user"] : new User();
 
 <body>
     <div class="modal" id="registraceModal">
-        <form action="signHandler.php" method="POST" id="signUpForm">
+        <form action="handlers/signHandler.php" method="POST" id="signUpForm">
             <input type="email" name="email" placeholder="email" required>
             <input type="password" name="password" placeholder="heslo" required>
             <input type="password" name="passAgain" placeholder="heslo znovu" required>
@@ -37,7 +37,7 @@ $user = isset($_SESSION["user"]) ? $_SESSION["user"] : new User();
         </form>
     </div>
     <div class="modal" id="loginModal">
-          <form action="signHandler.php" method="POST" id="signInForm">
+          <form action="handlers/signHandler.php" method="POST" id="signInForm">
               <input type="email" name="email" placeholder="email" required>
               <input type="password" name="password" placeholder="heslo" required>
               <input type="hidden" name="signIn" value="Přihlásit">

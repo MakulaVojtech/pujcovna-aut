@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fe159238-802b-4015-a651-248a1ec518bd" name="Default Changelist" comment="" />
+    <list default="true" id="fe159238-802b-4015-a651-248a1ec518bd" name="Default Changelist" comment="funkční login">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/dbConfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/dbConfig.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/sign.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/sign.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/signHandler.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,8 +30,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\pujcovna\handlers" />
+    </key>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -49,17 +62,42 @@
       <option name="presentableId" value="Default" />
       <updated>1585741055523</updated>
       <workItem from="1585741083682" duration="6722000" />
+      <workItem from="1586184502199" duration="2551000" />
     </task>
+    <task id="LOCAL-00001" summary="funkční login">
+      <created>1586184572517</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586184572517</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="funkční login" />
+    <option name="LAST_COMMIT_MESSAGE" value="funkční login" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="425" y="23" key="CommitChangelistDialog2" timestamp="1586184684723">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="425" y="23" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1586184684723" />
+    <state x="152" y="66" key="DiffContextDialog" timestamp="1586184678324">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="152" y="66" key="DiffContextDialog/0.0.1600.860@0.0.1600.860" timestamp="1586184678324" />
     <state x="580" y="184" key="FileChooserDialogImpl" timestamp="1585741217941">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="580" y="184" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1585741217941" />
+    <state x="512" y="145" key="MultipleFileMergeDialog" timestamp="1586184620182">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="512" y="145" key="MultipleFileMergeDialog/0.0.1600.860@0.0.1600.860" timestamp="1586184620182" />
     <state x="630" y="243" key="NewPhpClassDialog" timestamp="1585744558336">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -68,6 +106,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="634" y="352" key="NewPhpFileDialog/0.0.1600.860@0.0.1600.860" timestamp="1585741151861" />
+    <state x="392" y="162" key="Vcs.Push.Dialog.v2" timestamp="1586184587751">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="392" y="162" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1586184587751" />
     <state x="496" y="252" key="com.intellij.ide.util.TipDialog" timestamp="1585741088984">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

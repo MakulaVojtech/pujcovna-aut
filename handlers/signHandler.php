@@ -4,7 +4,7 @@ namespace handler;
 
 session_start();
 
-require "classes/UserManager.php";
+require "../classes/UserManager.php";
 
 use classes\UserException;
 use classes\UserManager;
@@ -30,7 +30,7 @@ if (isset($_POST["signUp"])) {
 if (isset($_POST["signIn"])) {
     try{
         $_SESSION["user"] = $userManager->signIn(htmlspecialchars($_POST["email"]), htmlspecialchars($_POST["password"])); 
-        echo "<p class='success'>Přihlášení proběhlo úspěšně.</p>";
+        echo true;
     }catch(UserException $e){
         echo "<p class='error'>{$e->getMessage()}</p>";
     }
@@ -38,5 +38,4 @@ if (isset($_POST["signIn"])) {
 
 if (isset($_POST["signOut"])) {
     session_destroy();
-    echo "<p class='success'>Odhlášení proběhlo úspěšně.</p>";
 }

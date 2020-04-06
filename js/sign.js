@@ -2,24 +2,28 @@ $(document).ready(function () {
     $("#signUpForm").submit(function (e) {
         e.preventDefault();
         let formValues = $(this).serialize();
-        $.post("signHandler.php", formValues,
+        $.post("handlers/signHandler.php", formValues,
             function (data) {
-                $("#flashes").html(data);
+                $("#flashes").append(data);
             });
     });
 
     $("#signInForm").submit(function (e) {
         e.preventDefault();
         let formValues = $(this).serialize();
-        $.post("signHandler.php", formValues,
+        $.post("handlers/signHandler.php", formValues,
             function (data) {
-                $(location).attr("href", "index.php");
+            if(data == true){
+                    $(location).attr("href", "index.php");
+            }else{
+                $("#flashes").append(data);
+            }
             });
     });
 
     $("#signOut").click(function (e) {
         e.preventDefault();
-        $.post("signHandler.php", "signOut=true",
+        $.post("handlers/signHandler.php", "signOut=true",
             function (data) {
                 $(location).attr("href", "index.php");
             });
