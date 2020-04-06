@@ -4,9 +4,9 @@
 namespace classes;
 
 
-class dbConfig
+abstract class dbConfig
 {
-    private const DSN = "mysql:dbname=pujcovna;host=127.0.0.1;charset=utf8";
+    private const DSN = "mysql:dbname=...;host=...;charset=utf8";
     private const USER = "root";
     private const PASS = "";
 
