@@ -82,14 +82,18 @@
     <option name="LAST_COMMIT_MESSAGE" value="funkční login" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="425" y="23" key="CommitChangelistDialog2" timestamp="1586184684723">
+    <state x="425" y="23" key="CommitChangelistDialog2" timestamp="1586187084802">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="425" y="23" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1586184684723" />
-    <state x="152" y="66" key="DiffContextDialog" timestamp="1586184678324">
+    <state x="425" y="23" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1586187084802" />
+    <state width="227" height="442" key="Diff.GoToChangePopup" timestamp="1586187131997">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="152" y="66" key="DiffContextDialog/0.0.1600.860@0.0.1600.860" timestamp="1586184678324" />
+    <state width="227" height="442" key="Diff.GoToChangePopup/0.0.1600.860@0.0.1600.860" timestamp="1586187131997" />
+    <state x="152" y="66" key="DiffContextDialog" timestamp="1586187172601">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="152" y="66" key="DiffContextDialog/0.0.1600.860@0.0.1600.860" timestamp="1586187172601" />
     <state x="580" y="184" key="FileChooserDialogImpl" timestamp="1585741217941">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -106,10 +110,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="634" y="352" key="NewPhpFileDialog/0.0.1600.860@0.0.1600.860" timestamp="1585741151861" />
-    <state x="392" y="162" key="Vcs.Push.Dialog.v2" timestamp="1586184587751">
+    <state x="392" y="162" key="Vcs.Push.Dialog.v2" timestamp="1586187172617">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="392" y="162" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1586184587751" />
+    <state x="392" y="162" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1586187172617" />
     <state x="496" y="252" key="com.intellij.ide.util.TipDialog" timestamp="1585741088984">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
