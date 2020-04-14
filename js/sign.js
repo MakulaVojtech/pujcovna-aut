@@ -4,7 +4,11 @@ $(document).ready(function () {
         let formValues = $(this).serialize();
         $.post("handlers/signHandler.php", formValues,
             function (data) {
-                $("#flashes").append(data);
+                if (data == true) {
+                    $(location).attr("href", "index.php");
+                } else {
+                    $("#flashes").append(data);
+                }
             });
     });
 
@@ -13,11 +17,11 @@ $(document).ready(function () {
         let formValues = $(this).serialize();
         $.post("handlers/signHandler.php", formValues,
             function (data) {
-            if(data == true){
+                if (data == true) {
                     $(location).attr("href", "index.php");
-            }else{
-                $("#flashes").append(data);
-            }
+                } else {
+                    $("#flashes").append(data);
+                }
             });
     });
 

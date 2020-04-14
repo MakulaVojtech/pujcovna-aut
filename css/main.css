@@ -1,13 +1,13 @@
 * {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
     border: 0;
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     color: darkred;
 }
 
-header{
+header {
     width: 100vw;
     padding: 25px;
     display: flex;
@@ -16,39 +16,47 @@ header{
     background-color: rgb(184, 195, 196);
 }
 
-.logo{
+.logo {
     font-size: 30px;
     text-decoration: none;
     font-weight: bold;
 }
-.logo b{
+
+.logo b {
     padding: 5px 10px;
     background-color: darkred;
     color: white;
 }
-nav{
+
+nav {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
     width: 30%;
 }
-nav a, .objednat {
+
+nav a,
+.objednat {
     text-decoration: none;
-    color:white;
+    color: white;
     background-color: darkred;
     padding: 8px 10px;
 }
-body{
+
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: rgb(229, 236, 236);
 }
-body h1{
+
+body h1 {
     padding: 25px;
 }
-.cars, .lendings{
+
+.cars,
+.lendings {
     background-color: rgb(184, 195, 196);
     width: 100%;
     padding: 25px;
@@ -57,7 +65,8 @@ body h1{
     flex-wrap: wrap;
 }
 
-.car, .lending{
+.car,
+.lending {
     background-color: rgb(229, 236, 236);
     width: 300px;
     height: 500px;
@@ -67,28 +76,35 @@ body h1{
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
-    
+
 }
-.lending{
+
+.lending {
     flex-direction: row;
     width: 500px;
     height: 300px;
     padding: 2px;
 }
-.cardiv, .right{
+
+.cardiv,
+.right {
     height: 100%;
     width: 50%;
 }
-.right{
+
+.right {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
-.right > *, .cardiv{
+
+.right>*,
+.cardiv {
     border: 2px solid white;
     padding: 10px;
 }
-.right > *{
+
+.right>* {
     height: 50%;
     padding: 10px;
     display: flex;
@@ -97,36 +113,101 @@ body h1{
     justify-content: space-evenly;
 }
 
-.car h1, .lending h1{
+.car h1,
+.lending h1 {
     font-size: 20px;
 }
-.car h2, .lending h2{
+
+.car h2,
+.lending h2 {
     font-size: 15px;
 }
-.car img, .lending img{
+
+.car img,
+.lending img {
     max-width: 300px;
     width: 100%;
 }
-.controls{
+
+.controls {
     width: 100%;
     display: flex;
     justify-content: flex-end;
 }
-.fa{
+
+.fa {
     font-size: 20px !important;
     text-decoration: none;
     margin: 5px;
 }
+form input, form button{
+    padding: 10px;
+    border: 1px solid darkred;
+    margin: 5px;
+}
+form input::placeholder{
+    color: rgba(139, 0, 0, 0.61);
+    align-self: center;
+}
+input[type="submit"]:hover, button:hover{
+    cursor: pointer;
+    transform: scale(1.01);
+}
 
-@media screen and (max-width:512px){
-    header{
+.modal {
+    border: darkred 2px solid;
+    border-radius: 2px;
+    background-color: rgb(229, 236, 236);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    width: 600px;
+    height: 400px;
+    max-height: 100%;
+    z-index: 1010;
+}
+
+.modalOverlay {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.658);
+}
+.modalCloseDiv{
+    overflow: auto;
+    padding: 10px;
+}
+.modalCloseDiv *{
+    float: right;
+}
+.modal form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 50%;
+}
+.close{
+    display: none;
+}
+
+
+@media screen and (max-width:512px) {
+    header {
         flex-direction: column;
     }
-    header nav{
+
+    header nav {
         width: 100%;
         padding-top: 25px;
     }
-    header nav a{
+
+    header nav a {
         width: 90vw;
         margin: 5px;
     }

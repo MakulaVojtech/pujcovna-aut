@@ -17,8 +17,8 @@ if (isset($_POST["signUp"])) {
         $user = $userManager->getNewUser();
         $user->setValues(htmlspecialchars($_POST["email"]), htmlspecialchars($_POST["name"]), htmlspecialchars($_POST["surname"]), htmlspecialchars($_POST["phone"]), htmlspecialchars($_POST["password"]), htmlspecialchars($_POST["passAgain"]));
         if ($userManager->signUp($user)) {
-            echo "<p class='success'>Uživatel úspěšně registrován.</p>";
-            header("Location:admin.php");
+            $_SESSION["sign"] = "<p class='success'>Registrace proběhla úspěšně. Můžete se přihlásit.</p>";
+            echo true;
         } else {
             echo "<p class='error'>Něco se pokazilo, zkuste to prosím zachvíli</p>";
         }
@@ -30,6 +30,7 @@ if (isset($_POST["signUp"])) {
 if (isset($_POST["signIn"])) {
     try{
         $_SESSION["user"] = $userManager->signIn(htmlspecialchars($_POST["email"]), htmlspecialchars($_POST["password"])); 
+        $_SESSION["sign"] = "<p class='success'>Přihlášení proběhlo úspěšně.</p>";
         echo true;
     }catch(UserException $e){
         echo "<p class='error'>{$e->getMessage()}</p>";
