@@ -23,6 +23,22 @@ final class UserManager extends dbConfig
         return new User();
     }
 
+    public function checkPassword(string $password): bool
+    {
+        $regex = "/^(?=.*[0-9])(?=.*[A-Z]).{8,}$/";
+        return preg_match($regex, $password);
+    }
+    public function checkEmail(string $email): bool
+    {
+        $regex = "/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/";
+        return preg_match($regex, $email);
+    }
+    public function checkPhone(string $phone): bool
+    {
+        $regex = "/([0-9]){9,9}/";
+        return preg_match($regex, $phone);
+    }
+
     public function signUp(User $user): bool
     {
         $email = $user->getEmail();
@@ -30,7 +46,15 @@ final class UserManager extends dbConfig
         $surname = $user->getSurname();
         $phone = $user->getPhone();
         $password = password_hash($user->getPassword(), PASSWORD_BCRYPT);
-
+        if (!$this->checkEmail($email)) {
+            throw new UserException("Zadejte prosím platný email.");
+        }
+        if(!$this->checkPassword($password)){
+            throw new UserException("Heslo musí obsahovat alespoň osm znaků z toho jedno VELKÉ a jedno malé písmeno a jedno číslo");
+        }
+        if (!$this->checkPhone($phone)) {
+            throw new UserException("Zadejte prosím platné telefonní číslo.");
+        }
         $sql = "SELECT * FROM user where email = :email";
         $stmt = $this->connection->prepare($sql);
         $stmt->bindParam(":email", $email);
@@ -59,6 +83,9 @@ final class UserManager extends dbConfig
 
     public function signIn(string $email, string $password): User
     {
+        if (!$this->checkEmail($email)) {
+            throw new UserException("Zadejte prosím platný email.");
+        }
         $sql = "SELECT * FROM user where email = :email";
         $stmt = $this->connection->prepare($sql);
         $stmt->bindParam(":email", $email);
@@ -94,7 +121,6 @@ final class UserManager extends dbConfig
             }
         }
     }
-
 }
 class UserException extends Exception
 {

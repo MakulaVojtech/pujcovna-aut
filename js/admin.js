@@ -68,7 +68,7 @@ $(function () {
                 $(modalId + " h2").html("Upravit vozidlo")
                 $("#nameInput").val(data.name);
                 $("#priceInput").val(data.pricePerDay);
-                $("#hiddenInput").val("update");
+                $("#hiddenInput").val(carId);
                 $(modalId).removeClass("close");
                 $("#modalOverlay").removeClass("close");
             }

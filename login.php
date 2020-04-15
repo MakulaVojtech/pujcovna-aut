@@ -9,7 +9,7 @@ include "header.php";
 <div class="cars">
     <div class="car">
         <form action="" method="POST" id="signInForm">
-            <input type="email" name="email" placeholder="email" required>
+            <input type="email" name="email" placeholder="email" id="emailInput"required>
             <input type="password" name="password" placeholder="heslo" required>
             <input type="hidden" name="signIn" value="Přihlásit">
             <button type="submit" name="submit" value="login">Přihlásit</button>

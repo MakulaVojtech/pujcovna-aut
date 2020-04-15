@@ -59,6 +59,33 @@ final class CarManager extends dbConfig
         return $stmt->execute();
     }
 
+    public function updateCar(int $id, string $name, int $pricePerDay, array $files = []): bool
+    {
+        if (empty($files)) {
+            $sql = "UPDATE `car` SET name = :name, pricePerDay = :pricePerDay WHERE id = :id";
+        } else {
+            $sql = "SELECT img FROM car WHERE id = ?";
+            $stmt = $this->connection->prepare($sql);
+            $stmt->execute([$id]);
+            $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+            $imgName = $stmt->fetch()["img"];
+            try {
+                $this->imageManager->deleteImage($imgName != null ? $imgName : "");
+                $img = $this->imageManager->uploadImage($files);
+            } catch (ImageException $e) {
+                throw new CarException($e->getMessage());
+            }
+            
+            $sql = "UPDATE `car` SET name = :name, pricePerDay = :pricePerDay, img = :img WHERE id = :id";
+        }
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindParam(":name", $name);
+        $stmt->bindParam(":pricePerDay", $pricePerDay);
+        !empty($files) ? $stmt->bindParam(":img", $img) : "";
+        $stmt->bindParam(":id", $id);
+        return $stmt->execute();
+    }
+
     public function deleteCar(int $id): void
     {
         $sql = "SELECT img FROM car WHERE id = ?";
@@ -67,7 +94,7 @@ final class CarManager extends dbConfig
         $stmt->setFetchMode(\PDO::FETCH_ASSOC);
         $name = $stmt->fetch()["img"];
         try {
-            $this->imageManager->deleteImage($name);
+            $this->imageManager->deleteImage($name != null ? $name : "");
         } catch (ImageException $e) {
             throw new CarException($e->getMessage());
         }

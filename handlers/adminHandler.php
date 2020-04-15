@@ -33,6 +33,17 @@ if (isset($_POST["carForm"])) {
         } catch (CarException $e) {
             echo "<p class='error'>{$e->getMessage()}</p>";
         }
-    } elseif ($_POST["carForm"] == "update") {
+    } elseif ($_POST["carForm"] >= 0) {
+        $id = $_POST["carForm"];
+        try {
+            $files = isset($_FILES["image"]) && !empty($_FILES["image"]) ? $_FILES : [];
+            if($carManager->updateCar(intval($id), htmlspecialchars($_POST["name"]), htmlspecialchars($_POST["pricePerDay"]), $files)){
+                echo true;
+            }else{
+                echo "<p class='error'>Něco se nepovedlo, zkuste to prosím za chvíli.</p>";
+            }
+        } catch (CarException $e) {
+            echo "<p class='error'>{$e->getMessage()}</p>";
+        }
     }
 }

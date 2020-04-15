@@ -33,10 +33,12 @@ class ImageManager{
         }
     }
 
-    public function deleteImage(string $fileName) : void
+    public function deleteImage(string $fileName = null) : void
     {
         try{
-            unlink("../images/$fileName");
+            if($fileName != null || $fileName != ""){
+                unlink("../images/$fileName");
+            }
         }catch(\Exception $e){
             throw new ImageException($e->getMessage());
         }

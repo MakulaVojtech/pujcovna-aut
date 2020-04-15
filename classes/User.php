@@ -34,7 +34,7 @@ final class User
 
     public function getPhone() : int
     {
-        return $this->phone;
+        return intval($this->phone);
     }
 
 
