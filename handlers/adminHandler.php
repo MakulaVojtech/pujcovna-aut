@@ -25,6 +25,7 @@ if (isset($_GET["carUpdateForm"])) {
 if (isset($_POST["carForm"])) {
     if ($_POST["carForm"] == "insert") {
         try {
+            $carManager->checkInsertValues($_POST["name"], $_POST["pricePerDay"]);
             if ($carManager->insertCar(htmlspecialchars($_POST["name"]), $_FILES, $_POST["pricePerDay"])) {
                 echo true;
             } else {
@@ -36,6 +37,7 @@ if (isset($_POST["carForm"])) {
     } elseif ($_POST["carForm"] >= 0) {
         $id = $_POST["carForm"];
         try {
+            $carManager->checkInsertValues($_POST["name"], $_POST["pricePerDay"]);
             $files = isset($_FILES["image"]) && !empty($_FILES["image"]) ? $_FILES : [];
             if($carManager->updateCar(intval($id), htmlspecialchars($_POST["name"]), htmlspecialchars($_POST["pricePerDay"]), $files)){
                 echo true;

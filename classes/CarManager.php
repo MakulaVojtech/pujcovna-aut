@@ -43,9 +43,22 @@ final class CarManager extends dbConfig
         $statement->setFetchMode(\PDO::FETCH_ASSOC);
         return $statement->fetch();
     }
+    
+    public function checkInsertValues($name, $pricePerDay) : void
+    {
+        $nameREGEX = "/^(\w+(\ )*)+$/";
+        $priceREGEX = "/^\d+$/";
+        if(!preg_match($nameREGEX,$name)){
+            throw new CarException("Název vozidla obsahuje nepovolené znaky.");
+        }
+        if(!preg_match($priceREGEX, $pricePerDay)){
+            throw new CarException("Cena může obsahovat pouze číslice.");
+        }
+    }
 
     public function insertCar(string $name, array $files, int $pricePerDay): bool
     {
+        $this->checkInsertValues($name, $pricePerDay);
         try {
             $img = $this->imageManager->uploadImage($files);
         } catch (ImageException $e) {
@@ -61,6 +74,7 @@ final class CarManager extends dbConfig
 
     public function updateCar(int $id, string $name, int $pricePerDay, array $files = []): bool
     {
+        $this->checkInsertValues($name, $pricePerDay);
         if (empty($files)) {
             $sql = "UPDATE `car` SET name = :name, pricePerDay = :pricePerDay WHERE id = :id";
         } else {
