@@ -192,8 +192,51 @@ input[type="submit"]:hover, button:hover{
     justify-content: space-between;
     height: 50%;
 }
-.close{
-    display: none;
+
+
+#flashes{
+    position: fixed;
+    top: 25px;
+    z-index: 2000;
+    text-align: center;
+}
+#flashes > *{
+    padding: 5px;
+    margin: 5px;
+}
+#flashes > *:hover{
+    cursor: pointer;
+}
+.success{
+    background-color: rgb(74, 148, 0);
+    color: white;
+}
+.success:hover{
+    background-color: rgba(74, 148, 0, 0.664);
+    transition: .5s;
+}
+.error{
+    background-color: rgba(170, 5, 5, 1);
+    border: red 1px thin;
+    color: white;
+}
+.error:hover{
+    background-color: rgba(170, 5, 5, 0.664);
+    transition: .5s;
+}
+
+#administraceDiv{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 300;
+}
+#administraceDiv a{
+    background-color: rgb(187, 0, 0);
+}
+#administraceDiv a:first-of-type{
+    margin-top: 6px;
 }
 
 
@@ -207,8 +250,17 @@ input[type="submit"]:hover, button:hover{
         padding-top: 25px;
     }
 
-    header nav a {
-        width: 90vw;
+    header nav > a, .navDiv{
+        width: 90vw !important;
         margin: 5px;
     }
+    .navDiv a, .navDiv,  #administraceA{
+        width: 90vw !important;
+    }
+    .navDiv{
+        padding: 5px 0px;
+    }
+}
+.close{
+    display: none;
 }

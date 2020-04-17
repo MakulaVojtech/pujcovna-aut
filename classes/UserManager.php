@@ -35,7 +35,7 @@ final class UserManager extends dbConfig
     }
     public function checkPhone(string $phone): bool
     {
-        $regex = "/([0-9]){9,9}/";
+        $regex = "/^([0-9]){9,9}$/";
         return preg_match($regex, $phone);
     }
 
