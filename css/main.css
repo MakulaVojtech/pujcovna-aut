@@ -15,6 +15,9 @@ header {
     align-items: center;
     background-color: rgb(184, 195, 196);
 }
+body{
+    overflow-x: hidden;
+}
 
 .logo {
     font-size: 30px;
@@ -237,6 +240,22 @@ input[type="submit"]:hover, button:hover{
 }
 #administraceDiv a:first-of-type{
     margin-top: 6px;
+}
+.wrapper{
+    width: 100%;
+    background-color: rgb(184, 195, 196);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.wrapper > .fa{
+    margin: 30px;
+    font-size: 30px !important;
+    transition: .5s;
+}
+.wrapper > .fa:hover{
+    color: rgba(139, 0, 0, 0.61);
+    transition: .5s;
 }
 
 
